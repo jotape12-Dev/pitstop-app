@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CAE90212F59F2DC00D40610 /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7CAE90202F59F2DC00D40610 /* AppShortcuts.xcstrings */; };
+		7CAE90232F5A000500D40610 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7CAE90222F5A000500D40610 /* Localizable.xcstrings */; };
 		7CEE6BF22F50E6D500876DB3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEE6BF12F50E6D500876DB3 /* WidgetKit.framework */; };
 		7CEE6BF42F50E6D500876DB3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEE6BF32F50E6D500876DB3 /* SwiftUI.framework */; };
 		7CEE6C012F50E6D600876DB3 /* PitStopWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7CEE6BEF2F50E6D500876DB3 /* PitStopWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -37,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7CAE90202F59F2DC00D40610 /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = AppShortcuts.xcstrings; sourceTree = "<group>"; };
+		7CAE90222F5A000500D40610 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		7CEE6B792F4E18C100876DB3 /* PitStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEE6BEF2F50E6D500876DB3 /* PitStopWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PitStopWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEE6BF12F50E6D500876DB3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -107,6 +111,8 @@
 		7CEE6B702F4E18C100876DB3 = {
 			isa = PBXGroup;
 			children = (
+				7CAE90202F59F2DC00D40610 /* AppShortcuts.xcstrings */,
+				7CAE90222F5A000500D40610 /* Localizable.xcstrings */,
 				7CEE6C0E2F50EAA000876DB3 /* PitStopWidgetExtension.entitlements */,
 				7CEE6B7B2F4E18C100876DB3 /* PitStop */,
 				7CEE6BF52F50E6D500876DB3 /* PitStopWidget */,
@@ -206,6 +212,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 7CEE6B702F4E18C100876DB3;
 			minimizedProjectReferenceProxies = 1;
@@ -225,6 +232,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CAE90212F59F2DC00D40610 /* AppShortcuts.xcstrings in Resources */,
+				7CAE90232F5A000500D40610 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +332,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -380,6 +390,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -395,11 +406,11 @@
 				DEVELOPMENT_TEAM = 6F2KGULZ85;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "O PitStop precisa acessar sua galeria para que você possa escolher uma foto para sua moto";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,12 +419,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jotape.app.br.PitStop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -428,11 +443,11 @@
 				DEVELOPMENT_TEAM = 6F2KGULZ85;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "O PitStop precisa acessar sua galeria para que você possa escolher uma foto para sua moto";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,12 +456,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jotape.app.br.PitStop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

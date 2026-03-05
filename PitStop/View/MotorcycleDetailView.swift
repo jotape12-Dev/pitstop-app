@@ -13,7 +13,6 @@ struct MotorcycleDetailView: View {
     
     var body: some View {
         List {
-
             Section {
                 HStack {
                     Spacer()

@@ -20,7 +20,7 @@ struct GarageView: View{
                     ContentUnavailableView(
                         "Garagem vazia",
                         systemImage: "wrench.and.jawbone",
-                        description: Text("Adicione sua primeira foto, para começar a reatrear o óleo, pneus e suas revisões.")
+                        description: Text("Adicione sua primeira moto, para começar a reatrear o óleo, pneus e suas revisões.")
                     )
                 } else {
                     List{

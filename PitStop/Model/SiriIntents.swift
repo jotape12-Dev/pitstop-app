@@ -4,20 +4,18 @@ import Foundation
 import WidgetKit
 
 struct AtualizarHodometroIntent: AppIntent {
-    static let title: LocalizedStringResource = "Update KM / Atualizar KM"
-    static let description = IntentDescription("Updates the motorcycle's odometer in PitStop.")
+    // Títulos e descrições na língua base do app (Português)
+    static let title: LocalizedStringResource = "Atualizar KM"
+    static let description = IntentDescription("Atualiza o hodômetro da moto no PitStop.")
     
-    @Parameter(title: "Moto / Motorcycle")
+    @Parameter(title: "Moto")
     var nomeDaMoto: String
     
-    @Parameter(title: "Nova KM / New Mileage")
+    @Parameter(title: "Nova KM")
     var novaKM: Int
     
     @MainActor
     func perform() async throws -> some IntentResult & ProvidesDialog {
-        let languageCode = Locale.current.language.languageCode?.identifier ?? "en"
-        let isPortuguese = languageCode.hasPrefix("pt")
-        
         do {
             let container = DatabaseManager.shared.container
             let context = container.mainContext
@@ -25,9 +23,8 @@ struct AtualizarHodometroIntent: AppIntent {
             let todasAsMotos = try context.fetch(FetchDescriptor<Motorcycle>())
             
             guard let moto = todasAsMotos.first(where: { $0.name.localizedCaseInsensitiveContains(nomeDaMoto) }) else {
-                let errorMsg = isPortuguese
-                    ? "Não encontrei a moto \(nomeDaMoto) na sua garagem."
-                    : "I couldn't find a motorcycle named \(nomeDaMoto) in your garage."
+                // Usando String(localized:) com a frase base em português
+                let errorMsg = String(localized: "Não encontrei a moto \(nomeDaMoto) na sua garagem.")
                 return .result(dialog: IntentDialog(stringLiteral: errorMsg))
             }
             
@@ -46,31 +43,27 @@ struct AtualizarHodometroIntent: AppIntent {
             try context.save()
             WidgetCenter.shared.reloadAllTimelines()
             
-            let successMsg = isPortuguese
-                ? "Pronto! O hodômetro da \(moto.name) foi atualizado para \(novaKM) quilômetros."
-                : "Done! The odometer for \(moto.name) has been updated to \(novaKM) kilometers."
-            
+            // Usando String(localized:) com a frase base em português
+            let successMsg = String(localized: "Pronto! O hodômetro da \(moto.name) foi atualizado para \(novaKM) quilômetros.")
             return .result(dialog: IntentDialog(stringLiteral: successMsg))
             
         } catch {
-            let failMsg = isPortuguese ? "Desculpe, ocorreu um erro." : "Sorry, an error occurred."
+            let failMsg = String(localized: "Desculpe, ocorreu um erro.")
             return .result(dialog: IntentDialog(stringLiteral: failMsg))
         }
     }
 }
+
 struct PitStopShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: AtualizarHodometroIntent(),
             phrases: [
-                //Ingles
-                "Update mileage in \(.applicationName)",
-                "Change bike KM in \(.applicationName)",
-                //Portugues
                 "Atualizar a quilometragem no \(.applicationName)",
-                "Mudar o KM da moto no \(.applicationName)"
+                "Mudar o KM da moto no \(.applicationName)",
+                "Atualizar KM no \(.applicationName)"
             ],
-            shortTitle: "Update KM",
+            shortTitle: "Atualizar KM",
             systemImageName: "speedometer"
         )
     }

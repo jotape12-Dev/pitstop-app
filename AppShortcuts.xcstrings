@@ -1,0 +1,31 @@
+{
+  "sourceLanguage" : "pt-BR",
+  "strings" : {
+    "Atualizar a quilometragem no ${applicationName}" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Update kilometer at ${applicationName}",
+              "Change the motorcycle KM in ${applicationName}",
+              "Update KM in ${applicationName}"
+            ]
+          }
+        },
+        "pt-BR" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Atualizar a quilometragem no ${applicationName}",
+              "Mudar o KM da moto no ${applicationName}",
+              "Atualizar KM no ${applicationName}"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

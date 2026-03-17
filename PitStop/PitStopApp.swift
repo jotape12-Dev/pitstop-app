@@ -10,10 +10,17 @@ import SwiftData
 
 @main
 struct PitStopApp: App {
+    
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
+
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            if hasSeenOnboarding {
+                MainTabView()
+            } else {
+                OnboardingView()
+            }
         }
-        .modelContainer(DatabaseManager.shared.container)
+        .modelContainer(for: Motorcycle.self)
     }
 }

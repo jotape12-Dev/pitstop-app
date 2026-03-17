@@ -7,12 +7,25 @@
 		<key>PitStop.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>PitStopWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7CEE6B782F4E18C100876DB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7CEE6BEE2F50E6D500876DB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
